@@ -1,0 +1,25 @@
+{
+  "name": "weatherbot",
+  "version": "1.0.0",
+  "description": "A simple Discord bot to get the Weather",
+  "main": "bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BlueMoonDevelopment/WeatherBot.git"
+  },
+  "author": "BlueMoonDevelopment",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BlueMoonDevelopment/WeatherBot/issues"
+  },
+  "homepage": "https://github.com/BlueMoonDevelopment/WeatherBot#readme",
+  "dependencies": {
+    "discord.js": "^14.7.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.30.0"
+  }
+}
