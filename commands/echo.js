@@ -1,7 +1,7 @@
 const { SlashCommandBuilder, ChannelType } = require('discord.js');
 
 module.exports = {
-	data : new SlashCommandBuilder()
+	data: new SlashCommandBuilder()
 		.setName('echo')
 		.setDescription('Replies with your input!')
 		.addStringOption(option =>
@@ -21,5 +21,6 @@ module.exports = {
 		const text = interaction.options.getString('input');
 		const channel = interaction.options.getChannel('channel');
 		const embed = interaction.options.getBoolean('embed');
+		await interaction.reply({ content: `${text} should be sent to ${channel} and should be embed: ${embed}`, ephermal: true });
 	},
 };

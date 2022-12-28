@@ -1,5 +1,6 @@
 {
 	"token": "your-token-goes-here",
 	"clientId": "your-clientid-goes-here",
-	"guildId": "your-guildid-goes-here"
+	"guildId": "your-guildid-goes-here",
+	"openweathermap-api-id": "your api id goes here"
 }
