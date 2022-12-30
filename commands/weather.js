@@ -1,6 +1,5 @@
 const { SlashCommandBuilder } = require('discord.js');
 const weather = require('openweather-apis');
-const wait = require('node:timers/promises').setTimeout;
 const { openweathermap_api_id } = require('../config.json');
 
 module.exports = {
@@ -22,7 +21,7 @@ module.exports = {
 					{ name: 'Internal units', value: 'internal' },
 				),
 		),
-	async execute(interaction) {
+	execute(interaction) {
 		const locale = interaction.locale ?? 'en';
 		const city = interaction.options.getString('city');
 		const units = interaction.options.getString('units');
@@ -32,16 +31,17 @@ module.exports = {
 		weather.setUnits(units);
 		weather.setAPPID(openweathermap_api_id);
 
-		let temperature = 0.0;
-
-		await weather.getTemperature(function (err, temp) {
+		weather.getTemperature(function (err, temp) {
 			if (err) console.log(err);
-			temperature = temp;
+			let unit;
+			if (units == 'metric') {
+				unit = '°C';
+			} else if (units == 'imperial') {
+				unit = '°F';
+			} else if (units == 'internal') {
+				unit = 'K';
+			}
+			interaction.reply({ content: `Temperature: ${temp}${unit}`, ephermal: true });
 		});
-
-		// TODO: Hacky way, needs to be changed later!!
-		await wait(100);
-
-		interaction.reply({ content: `Temperature: ${temperature}`, ephermal: true });
 	},
 };
