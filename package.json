@@ -4,7 +4,9 @@
   "description": "A simple Discord bot to get the Weather",
   "main": "bot.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node bot.js",
+    "dev": "nodemon ./bot.js"
   },
   "repository": {
     "type": "git",
@@ -17,9 +19,11 @@
   },
   "homepage": "https://github.com/BlueMoonDevelopment/WeatherBot#readme",
   "dependencies": {
-    "discord.js": "^14.7.1"
+    "discord.js": "^14.7.1",
+    "openweather-apis": "^4.4.2"
   },
   "devDependencies": {
-    "eslint": "^8.30.0"
+    "eslint": "^8.30.0",
+    "nodemon": "^2.0.20"
   }
 }
