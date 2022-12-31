@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "outDir": "./",
+    "rootDirs": [
+      "./",
+      "./views/backend/"
+    ],
+    "strict": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "allowJs": true,
+  },
+  "exclude": [
+    "./node_modules"
+  ],
+  "ts-node": {
+    "files": true
+  },
+}
