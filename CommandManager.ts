@@ -1,12 +1,12 @@
-const { Collection } = require('discord.js');
-const fs = require('node:fs');
-const path = require('node:path');
+import { Collection, Client } from 'discord.js';
+import fs from 'fs';
+import path from 'path';
 
-function loadCommands(client) {
+export function loadCommands(client: Client) {
 	client.commands = new Collection();
 
 	const commandsPaths = path.join(__dirname, 'commands');
-	const commandFiles = fs.readdirSync(commandsPaths).filter(file => file.endsWith('.js'));
+	const commandFiles = fs.readdirSync(commandsPaths).filter(file => file.endsWith('.ts'));
 
 	for (const file of commandFiles) {
 		const filePath = path.join(commandsPaths, file);
@@ -21,5 +21,3 @@ function loadCommands(client) {
 		}
 	}
 }
-
-module.exports = { loadCommands };
