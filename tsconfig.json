@@ -5,7 +5,8 @@
     "outDir": "./",
     "rootDirs": [
       "./",
-      "./views/backend/"
+      "./commands",
+      "./events"
     ],
     "strict": true,
     "moduleResolution": "node",
